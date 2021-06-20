@@ -1,12 +1,6 @@
 package org.dhfrederick.museum;
 
-import android.content.res.Resources;
-
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
-import org.dhfrederick.museum.R;
 
 public class ExhibitDetailViewModel extends ViewModel {
 

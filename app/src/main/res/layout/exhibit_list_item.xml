@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/exhibitIcon"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/exhibit1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/exhibitTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/exhibitIcon"
+        android:layout_toRightOf="@+id/exhibitIcon"
+        android:maxLines="1"
+        android:text="Exhibit 1"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/exhibitIcon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/exhibitDescriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exhibitTitleText"
+        android:layout_alignStart="@+id/exhibitTitleText"
+        android:layout_alignLeft="@+id/exhibitTitleText"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Exhibit Description 1"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/exhibitIcon"
+        app:layout_constraintTop_toBottomOf="@+id/exhibitTitleText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exhibit_info">
+        <item>@string/large_text</item>
+        <item>@string/large_text2</item>
+        <item>@string/large_text</item>
+        <item>@string/large_text2</item>
+    </string-array>
+</resources>

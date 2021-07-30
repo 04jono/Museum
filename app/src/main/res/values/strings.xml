@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Museum</string>
     <string name="title_home">Home</string>
+    <string name="title_level">Level</string>
     <string name="title_dashboard">Exhibits</string>
     <string name="title_notifications">Sitemap</string>
     <string name="exhibit_detail">Exhibit</string>

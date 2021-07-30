@@ -8,15 +8,20 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
 
+import org.dhfrederick.museum.ExhibitDetailViewFragment;
+import org.dhfrederick.museum.ExhibitDetailViewFragmentArgs;
 import org.dhfrederick.museum.ExhibitListAdapter;
+import org.dhfrederick.museum.MainActivity;
 import org.dhfrederick.museum.R;
 
 import static org.dhfrederick.museum.ui.dashboard.DashboardFragmentDirections.*;
@@ -27,6 +32,16 @@ public class DashboardFragment extends Fragment {
 
     ListView lView;
     ExhibitListAdapter lAdapter;
+    public static DashboardFragment newInstance(int pos)
+    {
+        DashboardFragment dashboardFragment = new DashboardFragment();
+
+        Bundle args = new Bundle();
+        args.putInt("listPosition", pos);
+        dashboardFragment.setArguments(args);
+
+        return dashboardFragment;
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -47,6 +62,9 @@ public class DashboardFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        int dashboardNum = ExhibitDetailViewFragmentArgs.fromBundle(getArguments()).getListPosition();
+        Toast.makeText(getContext(), "Dashboard " + Integer.toString(dashboardNum), Toast.LENGTH_SHORT).show();
+        dashboardViewModel.setDashboardId(dashboardNum);
         lView = (ListView) getView().findViewById(R.id.exhibits_list);
 
         lAdapter = new ExhibitListAdapter(getContext(), dashboardViewModel.getTitles(),

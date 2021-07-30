@@ -12,6 +12,16 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/navigation_level"
+        android:name="org.dhfrederick.museum.ui.level.LevelFragment"
+        android:label="@string/title_level"
+        tools:layout="@layout/fragment_level" >
+        <action
+            android:id="@+id/action_navigation_level_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
+    </fragment>
+    
+    <fragment
         android:id="@+id/navigation_dashboard"
         android:name="org.dhfrederick.museum.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
@@ -19,6 +29,10 @@
         <action
             android:id="@+id/action_navigation_dashboard_to_exhibitDetailViewFragment"
             app:destination="@id/navigation_exhibit_detail" />
+        <argument
+            android:name="listPosition"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
 
     <fragment

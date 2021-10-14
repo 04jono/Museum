@@ -3,6 +3,7 @@ package org.dhfrederick.museum;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.media.MediaPlayer;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,12 +20,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
+import org.dhfrederick.museum.ui.dashboard.DashboardFragmentDirections;
 import org.dhfrederick.museum.ui.dashboard.DashboardViewModel;
+import org.dhfrederick.museum.ui.level.LevelFragmentDirections;
 import org.dhfrederick.museum.ui.notifications.NotificationsFragment;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+
+import static org.dhfrederick.museum.ui.dashboard.DashboardFragmentDirections.actionNavigationDashboardToExhibitDetailViewFragment;
 
 public class ExhibitDetailViewFragment extends Fragment {
 
@@ -34,16 +43,20 @@ public class ExhibitDetailViewFragment extends Fragment {
     private TextView playerPosition, playerDuration;
     private SeekBar seekbar;
     private ImageView btrewind, btplay, btpause, btforward;
+    private ImageView backbutton;
+
+    //For title bar
+    private String[] titles;
     /*
     public ExhibitDetailViewFragment()
     {} */
 
-    public static ExhibitDetailViewFragment newInstance(int pos)
+    public static ExhibitDetailViewFragment newInstance(int list)
     {
         ExhibitDetailViewFragment exhibitDetailFragment = new ExhibitDetailViewFragment();
 
         Bundle args = new Bundle();
-        args.putInt("listPosition", pos);
+        args.putInt("listPosition", list);
         exhibitDetailFragment.setArguments(args);
 
         return exhibitDetailFragment;
@@ -62,18 +75,53 @@ public class ExhibitDetailViewFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        int exhibitNum = ExhibitDetailViewFragmentArgs.fromBundle(getArguments()).getListPosition();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(getString(R.string.exhibit_detail)+ " " +exhibitNum);
+
+        int listpos = ExhibitDetailViewFragmentArgs.fromBundle(getArguments()).getListPosition();
+        int exhibitNum = listpos % 10;
+        final int dashboardNum = listpos / 10;
+        Resources res = getResources();
+        switch(dashboardNum){
+            case 1:
+                titles = res.getStringArray(R.array.titles1);
+                break;
+            case 2:
+                titles = res.getStringArray(R.array.titles2);
+                break;
+        }
+        String title = titles[exhibitNum-1];
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(title);
         ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         exhibitDetailViewModel.setExhibitId(exhibitNum);
-        int[] images = exhibitDetailViewModel.getImages();
-        int[] audios = exhibitDetailViewModel.getAudios();
-        Resources res = getResources();
-        String[] text = res.getStringArray(R.array.exhibit_info);
-        ImageView imgView = (ImageView)getView().findViewById(R.id.exhibit_detail_image_view);
-        imgView.setImageResource(images[exhibitNum-1]);
-        TextView txtView = (TextView)getView().findViewById(R.id.textView);
-        txtView.setText(text[exhibitNum-1]);
+
+        ArrayList<int[]> imagelist = exhibitDetailViewModel.getImages();
+        int[] images = imagelist.get(dashboardNum - 1);
+
+        ArrayList<int[]> audiolist = exhibitDetailViewModel.getAudios();
+        int[] audios = audiolist.get(dashboardNum - 1);
+
+        String[] text = {};
+        if(dashboardNum == 1)
+            text = res.getStringArray(R.array.exhibit1_info);
+        else if(dashboardNum == 2)
+            text = res.getStringArray(R.array.exhibit2_info);
+        ImageView imgView = (ImageView) getView().findViewById(R.id.exhibit_detail_image_view);
+        imgView.setImageResource(images[exhibitNum - 1]);
+        TextView txtView = (TextView) getView().findViewById(R.id.textView);
+        txtView.setText(text[exhibitNum - 1]);
+
+        //Back Button
+        backbutton = getView().findViewById(R.id.button_back);
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ExhibitDetailViewFragmentDirections.ActionNavigationExhibitDetailToNavigationDashboard action = ExhibitDetailViewFragmentDirections.actionNavigationExhibitDetailToNavigationDashboard();
+                action.setListPosition(dashboardNum);
+                Navigation.findNavController(getView()).navigate(action);
+            }
+        });
+
+
+
         //Media Player
         playerPosition = getView().findViewById(R.id.playerpos);
         playerDuration = getView().findViewById(R.id.player_duration);
@@ -84,8 +132,8 @@ public class ExhibitDetailViewFragment extends Fragment {
         btforward = getView().findViewById(R.id.button_forward);
 
 
-        player = MediaPlayer.create(getActivity(), audios[exhibitNum-1]);
-        runnable = new Runnable(){
+        player = MediaPlayer.create(getActivity(), audios[exhibitNum - 1]);
+        runnable = new Runnable() {
             @Override
             public void run() {
 
@@ -125,7 +173,7 @@ public class ExhibitDetailViewFragment extends Fragment {
             public void onClick(View v) {
                 int currPosition = player.getCurrentPosition();
                 int duration = player.getDuration();
-                if(player.isPlaying() && duration != currPosition){
+                if (player.isPlaying() && duration != currPosition) {
                     currPosition += 5000;
                     playerPosition.setText(convertFormat(currPosition));
                     player.seekTo(currPosition);
@@ -138,12 +186,11 @@ public class ExhibitDetailViewFragment extends Fragment {
             public void onClick(View v) {
                 int currPosition = player.getCurrentPosition();
                 int duration = player.getDuration();
-                if(player.isPlaying() && currPosition >= 5000){
+                if (player.isPlaying() && currPosition >= 5000) {
                     currPosition -= 5000;
                     playerPosition.setText(convertFormat(currPosition));
                     player.seekTo(currPosition);
-                }
-                else if(player.isPlaying()){
+                } else if (player.isPlaying()) {
                     currPosition = 0;
                     playerPosition.setText(convertFormat(currPosition));
                     player.seekTo(currPosition);
@@ -160,10 +207,12 @@ public class ExhibitDetailViewFragment extends Fragment {
                     player.seekTo(progress);
                 playerPosition.setText(convertFormat(player.getCurrentPosition()));
             }
+
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
 
             }
+
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
@@ -178,8 +227,6 @@ public class ExhibitDetailViewFragment extends Fragment {
                 player.seekTo(0);
             }
         });
-
-
     }
 
     private String convertFormat(int duration) {

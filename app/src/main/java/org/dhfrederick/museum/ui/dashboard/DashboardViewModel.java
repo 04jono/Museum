@@ -1,20 +1,26 @@
 package org.dhfrederick.museum.ui.dashboard;
 
+import android.content.res.Resources;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import org.dhfrederick.museum.R;
 
+import java.util.ArrayList;
+
 public class DashboardViewModel extends ViewModel {
 
     // private MutableLiveData<String> mText;
     private int dashboardId;
-    int[] images = {R.drawable.exhibit1, R.drawable.exhibit2, R.drawable.exhibit3, R.drawable.exhibit4};
 
-    String[] titles = {"Exhibit1", "Exhibit2", "Exhibit3", "Exhibit4"};
+    private int[] images1 = {R.drawable.firstinhabitants, R.drawable.establishment, R.drawable.coloniallife, R.drawable.revolutionarywar, R.drawable.craftspeople};
+    private int[] images2 = {R.drawable.exhibit4, R.drawable.exhibit3, R.drawable.exhibit2, R.drawable.exhibit1};
+    private ArrayList<int[]> imagelist = new ArrayList<int[]>();
 
-    String[] descriptions = {"Description 1", "Description 2", "Description 3", "Description 4"};
+
+
 
     public int getDashboardId() {
         return dashboardId;
@@ -26,13 +32,13 @@ public class DashboardViewModel extends ViewModel {
 
     public DashboardViewModel() {
         dashboardId = 1;
+        imagelist.add(images1);
+        imagelist.add(images2);
     }
 
     /* public LiveData<String> getText() {
         return mText;
     } */
 
-    public int[] getImages() {return images;}
-    public String[] getTitles() {return titles;}
-    public String[] getDescriptions() { return descriptions;}
+    public ArrayList<int[]> getImages() {return imagelist;}
 }

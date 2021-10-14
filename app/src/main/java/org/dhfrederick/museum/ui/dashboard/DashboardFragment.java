@@ -1,5 +1,6 @@
 package org.dhfrederick.museum.ui.dashboard;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,20 +25,23 @@ import org.dhfrederick.museum.ExhibitListAdapter;
 import org.dhfrederick.museum.MainActivity;
 import org.dhfrederick.museum.R;
 
+import java.util.ArrayList;
+
 import static org.dhfrederick.museum.ui.dashboard.DashboardFragmentDirections.*;
 
 public class DashboardFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;
-
+    private String[] titles;
+    private String[] descriptions;
     ListView lView;
     ExhibitListAdapter lAdapter;
-    public static DashboardFragment newInstance(int pos)
+    public static DashboardFragment newInstance(int list)
     {
         DashboardFragment dashboardFragment = new DashboardFragment();
 
         Bundle args = new Bundle();
-        args.putInt("listPosition", pos);
+        args.putInt("listPosition", list);
         dashboardFragment.setArguments(args);
 
         return dashboardFragment;
@@ -62,13 +66,27 @@ public class DashboardFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        int dashboardNum = ExhibitDetailViewFragmentArgs.fromBundle(getArguments()).getListPosition();
-        Toast.makeText(getContext(), "Dashboard " + Integer.toString(dashboardNum), Toast.LENGTH_SHORT).show();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        final int dashboardNum = ExhibitDetailViewFragmentArgs.fromBundle(getArguments()).getListPosition();
         dashboardViewModel.setDashboardId(dashboardNum);
         lView = (ListView) getView().findViewById(R.id.exhibits_list);
 
-        lAdapter = new ExhibitListAdapter(getContext(), dashboardViewModel.getTitles(),
-                dashboardViewModel.getDescriptions(), dashboardViewModel.getImages());
+        Resources res = getResources();
+        switch(dashboardNum){
+            case 1:
+                titles = res.getStringArray(R.array.titles1);
+                descriptions = res.getStringArray(R.array.descriptions1);
+                break;
+            case 2:
+                titles = res.getStringArray(R.array.titles2);
+                descriptions = res.getStringArray(R.array.descriptions2);
+                break;
+        }
+        ArrayList<int[]> imagelist = dashboardViewModel.getImages();
+        int[] images = imagelist.get(dashboardNum-1);
+
+        lAdapter = new ExhibitListAdapter(getContext(), titles,
+                descriptions, images);
 
         lView.setAdapter(lAdapter);
 
@@ -79,7 +97,7 @@ public class DashboardFragment extends Fragment {
 
                 //Toast.makeText(MainActivity.this, version[i]+" "+versionNumber[i], Toast.LENGTH_SHORT).show();
                 ActionNavigationDashboardToExhibitDetailViewFragment action = actionNavigationDashboardToExhibitDetailViewFragment();
-                action.setListPosition(i+1);
+                action.setListPosition(i+1 + (dashboardNum * 10));
                 Navigation.findNavController(getView()).navigate(action);
 
             }

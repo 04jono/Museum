@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/exhibitIcon"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:src="@drawable/exhibit1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,7 +25,7 @@
         android:layout_toRightOf="@+id/exhibitIcon"
         android:maxLines="1"
         android:text="Exhibit 1"
-        android:textSize="30sp"
+        android:textSize="28sp"
         app:layout_constraintStart_toEndOf="@+id/exhibitIcon"
         app:layout_constraintTop_toTopOf="parent" />
 

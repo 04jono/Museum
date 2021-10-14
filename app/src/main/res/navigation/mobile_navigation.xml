@@ -54,5 +54,8 @@
             android:name="listPosition"
             app:argType="integer"
             android:defaultValue="0" />
+        <action
+            android:id="@+id/action_navigation_exhibit_detail_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
     </fragment>
 </navigation>

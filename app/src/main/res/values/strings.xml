@@ -5,179 +5,84 @@
     <string name="title_dashboard">Exhibits</string>
     <string name="title_notifications">Sitemap</string>
     <string name="exhibit_detail">Exhibit</string>
-    <string name="large_text">
-        "Cubism and Futurism\n\n"
-
-        "One of the most influential art movements of the 20th century, Cubism involved artists."
-        "abandoning perspective and realism to paint a subject from several different angles at once. "
-        "It was inspired by the work of French painter Paul Cézanne. Another important modern movement "
-        "was Futurism, which depicted, technology, speed, and movement. \n"
-        "In 1907, the Spanish artist Pablo picasso and French artist Georges Braque visited and exhibition "
-        "of Cézanne's work in Paris, France. They were inspired by what they saw to start making paintings "
-        "made of broken shapes. Like Cézanne, the artists tried to capture the simple geometric forms, "
-        "such as oblongs and triangles, found in nature. \n\n"
-
-        "Bold, graphic, intentional.\n\n"
-
-        "The foundational elements of print based design typography, grids, space, scale, color, "
-        "and use of imagery guide visual treatments. These elements do far more than please the "
-        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
-        "imagery, large scale typography, and intentional white space create a bold and graphic "
-        "interface that immerse the user in the experience.\n"
-        "An emphasis on user actions makes core functionality immediately apparent and provides "
-        "waypoints for the user.\n\n"
-
-        "Motion provides meaning.\n\n"
-
-        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
-        "inflection points that initiate motion, transforming the whole design.\n"
-        "All action takes place in a single environment. Objects are presented to the user without "
-        "breaking the continuity of experience even as they transform and reorganize.\n"
-        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
-        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
-
-        "3D world.\n\n"
-
-        "The material environment is a 3D space, which means all objects have x, y, and z "
-        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
-        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
-        "position along the z-axis and has a standard 1dp thickness.\n"
-        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
-        "emulated by manipulating the y-axis.\n\n"
-
-        "Light and shadow.\n\n"
-
-        "Within the material environment, virtual lights illuminate the scene. Key lights create "
-        "directional shadows, while ambient light creates soft shadows from all angles.\n"
-        "Shadows in the material environment are cast by these two light sources. In Android "
-        "development, shadows occur when light sources are blocked by sheets of material at "
-        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
-        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
-
-        "Resting elevation.\n\n"
-
-        "All material objects, regardless of size, have a resting elevation, or default elevation "
-        "that does not change. If an object changes elevation, it should return to its resting "
-        "elevation as soon as possible.\n\n"
-
-        "Component elevations.\n\n"
-
-        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
-        "does not vary from 6dp in one app to 16dp in another app).\n"
-        "Components may have different resting elevations across platforms, depending on the depth "
-        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
-
-        "Responsive elevation and dynamic elevation offsets.\n\n"
-
-        "Some component types have responsive elevation, meaning they change elevation in response "
-        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
-        "changes are consistently implemented using dynamic elevation offsets.\n"
-        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
-        "to the component’s resting state. They ensure that elevation changes are consistent "
-        "across actions and component types. For example, all components that lift on press have "
-        "the same elevation change relative to their resting elevation.\n"
-        "Once the input event is completed or cancelled, the component will return to its resting "
-        "elevation.\n\n"
-
-        "Avoiding elevation interference.\n\n"
-
-        "Components with responsive elevations may encounter other components as they move between "
-        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
-        "through other material, components avoid interfering with one another any number of ways, "
-        "whether on a per component basis or using the entire app layout.\n"
-        "On a component level, components can move or be removed before they cause interference. "
-        "For example, a floating action button (FAB) can disappear or move off screen before a "
-        "user picks up a card, or it can move if a snackbar appears.\n"
-        "On the layout level, design your app layout to minimize opportunities for interference. "
-        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
-        "when a user tries to pick up one of cards.\n\n"
+    <string name="placeholder_text">
+        "Placeholder\n\n\n\n\n\n"
     </string>
-    <string name="large_text2">
-        "Impressionism\n\n"
+    <string name="first_inhabitants_text">
+        "First Inhabitants\n\n"
 
-        "In the 1860s, a group of French painters started to work in a radical new way. They painted"
-        "quickly in the open air rather than working in a studio from sketches. Using bold marks and "
-        "bright colors, they sought to capture everyday life without trying to produce a precise "
-        "likenesses. This group would later come to be known as the Impressionists. \n"
-        "The artists worked in Paris and met regularly. The ideas they discussed included new color"
-        "theories, photography, landscape painters, and the Realists, especially Manet. Abandoning"
-        "traditional art styles and subjects, they painted life around them, capturing passing moments,"
-        "such as the fleeting effects of sunlight. Dance at the Moulin de la Galette by Renoir is a "
-        "stunning example of the genre. \n\n"
+        "For thousands of years, native peoples traversed land that would become Frederick County. "
+        "Historic-era tribes, such as the Susquehannock, Piscataway, and Tuscarora, used the Upper "
+        "Potomac and Monocacy River, with surrounding valleys, to hunt wild game and establish small "
+        "encampments and villages.\n\n"
 
-        "Bold, graphic, intentional.\n\n"
+        "A watercolor by English artist John White shows a fortified village. The houses are covered "
+        "\"some wth matts, and some wth barcks of trees,\" according to White's inscription at the bottom "
+        "of the drawing. Residents gather around the fire at the center of the town. A few people can be "
+        "seen carrying a bow, another an axe; a dog is seen in the upper left.\n\n"
 
-        "The foundational elements of print based design typography, grids, space, scale, color, "
-        "and use of imagery guide visual treatments. These elements do far more than please the "
-        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
-        "imagery, large scale typography, and intentional white space create a bold and graphic "
-        "interface that immerse the user in the experience.\n"
-        "An emphasis on user actions makes core functionality immediately apparent and provides "
-        "waypoints for the user.\n\n"
+    </string>
+    <string name="colonial_life_text">
+        "Colonial Life\n\n"
 
-        "Motion provides meaning.\n\n"
+        "In the New World, faith and frugality were guiding principles. Several churches were established "
+        "in early Fredericktowne. These served for religious purposes and as centers for education and "
+        "social life. The distinct cultures of these early settlers were illustrated by the diverse "
+        "architectural designs, styles of dress, cooking traditions and festivities.\n\n"
 
-        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
-        "inflection points that initiate motion, transforming the whole design.\n"
-        "All action takes place in a single environment. Objects are presented to the user without "
-        "breaking the continuity of experience even as they transform and reorganize.\n"
-        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
-        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+        "John Thomas Schley (1712-1790) emigrated from Moerzheim, Germany around 1745, and built the "
+        "first house in Frederick. He became a naturalized citizen in 1760. Schley was a schoolmaster, "
+        "tavern owner, organist, and composer. He was very active in the Reformed Church and was a founding "
+        "member of the first fire company in Frederick.\n\n"
+    </string>
 
-        "3D world.\n\n"
+    <string name="establishment_text">
+        "Establishment of Frederick County\n\n"
 
-        "The material environment is a 3D space, which means all objects have x, y, and z "
-        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
-        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
-        "position along the z-axis and has a standard 1dp thickness.\n"
-        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
-        "emulated by manipulating the y-axis.\n\n"
+        "Europeans established the provincial colony of Maryland in 1634, consisting of settlements "
+        "along the Chesapeake Bay and Potomac River in southern Maryland. Slowly, the English colonists "
+        "would move toward the interior of the colony, establishing villages along major waterways connecting "
+        "to the Potomac and the Bay. The area here was seen by English settlers as untamed, wild and dangerous. "
+        "Land speculators and colonial officials wanted to take control of the interior, making these areas "
+        "profitable for themselves and the English throne. One such, was Daniel Dulany, an Irish lawyer and "
+        "entrepreneur who had possession of a land patent of 7,000 acres adjacent the Monocacy River by the "
+        "name of \"Tasker's Chance.\"\n\n"
 
-        "Light and shadow.\n\n"
+        "Daniel Dulany knew he could not successfully settle his new community on Maryland's western frontier "
+        "with typical English immigrants. He knew Pennsylvania had success in developing its interior thanks to "
+        "immigrants from Germany. These people were hard-working, brave and industrious. Over several years, Dulany "
+        "sent inducements to German and Swiss peoples in Pennsylvania and Europe to settle on his Tasker's Chance "
+        "parcel. Meanwhile, English and Scots-Irish began migrating to Frederick-Town, coming from established towns "
+        "and counties of the colony. Frederick-Town would become the county seat.\n\n"
+    </string>
 
-        "Within the material environment, virtual lights illuminate the scene. Key lights create "
-        "directional shadows, while ambient light creates soft shadows from all angles.\n"
-        "Shadows in the material environment are cast by these two light sources. In Android "
-        "development, shadows occur when light sources are blocked by sheets of material at "
-        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
-        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+    <string name="craftspeople_text">
+        "Craftspeople\n\n"
 
-        "Resting elevation.\n\n"
+        "Fredericktowne became a thriving community, attracting many tradespeople, such as weavers, tailors, "
+        "silversmiths, shoemakers, tanners, blacksmiths, potters, and wheelwrights. About seven out of eight citizens "
+        "were farmers, and other professionals ranged from newspaper publishers to innkeepers. As the town grew, "
+        "talented craftspeople helped establish Fredericktowne as a notable crossroads where makers of glass, furniture, "
+        "clocks, jewelry, and hats could be found. These locally made items contributed to the resident's quality of life.\n\n "
 
-        "All material objects, regardless of size, have a resting elevation, or default elevation "
-        "that does not change. If an object changes elevation, it should return to its resting "
-        "elevation as soon as possible.\n\n"
+        "E. Frederick Klein was born in Wurtemberg, Germany. In 1790, After serving as a baker in the army in Switzerland, "
+        "he sailed to America and, for two years, worked as a baker in Pennsylvania. For 19 years, he ran a bakery in Baltimore. "
+        "Due to ill health, he moved to Frederick County in 1840.\n\n"
+    </string>
 
-        "Component elevations.\n\n"
+    <string name="revolutionary_text">
+        "Revolutionary War\n\n"
 
-        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
-        "does not vary from 6dp in one app to 16dp in another app).\n"
-        "Components may have different resting elevations across platforms, depending on the depth "
-        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+        "Residents of varying cultures banded together in the 1770s in their fight for independence. The American Revolution "
+        "attracted a new wave of Europeans to settle in Fredericktowne in a most unorthodox manner. These were the Hessians, "
+        "German mercenary soldiers hired by the British to fight in the American Revolutionary War. Some were captured at the "
+        "battles of Saratoga, New York, and Yorktown, Virginia, and were imprisoned in the Frederick Barracks in the south area "
+        "of town. Finding friendly residents who shared their native tongue, many Hessian soldiers made Frederick their home at "
+        "war's end, rather than return to Europe.\n\n"
 
-        "Responsive elevation and dynamic elevation offsets.\n\n"
-
-        "Some component types have responsive elevation, meaning they change elevation in response "
-        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
-        "changes are consistently implemented using dynamic elevation offsets.\n"
-        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
-        "to the component’s resting state. They ensure that elevation changes are consistent "
-        "across actions and component types. For example, all components that lift on press have "
-        "the same elevation change relative to their resting elevation.\n"
-        "Once the input event is completed or cancelled, the component will return to its resting "
-        "elevation.\n\n"
-
-        "Avoiding elevation interference.\n\n"
-
-        "Components with responsive elevations may encounter other components as they move between "
-        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
-        "through other material, components avoid interfering with one another any number of ways, "
-        "whether on a per component basis or using the entire app layout.\n"
-        "On a component level, components can move or be removed before they cause interference. "
-        "For example, a floating action button (FAB) can disappear or move off screen before a "
-        "user picks up a card, or it can move if a snackbar appears.\n"
-        "On the layout level, design your app layout to minimize opportunities for interference. "
-        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
-        "when a user tries to pick up one of cards.\n\n"
+        "Conrad Engelbrecht (1758-1819), a tailor from Eichig, near present-day Bayreuth, Germany. He was a Hessian soldier "
+        "hired by the British to suppress the Revolutionary War. He was the father of Jacob Engelbrecht and is buried across "
+        "the street from this museum in the Evangelical Lutheran Church graveyard. Jacob Engelbrecht (1797-1882), served Frederick "
+        "as a tailor, musician and major. He was also a diarist, whose observations are valuable today for its many perspectives.\n\n"
     </string>
 </resources>

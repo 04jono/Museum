@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="exhibit_info">
-        <item>@string/large_text</item>
-        <item>@string/large_text2</item>
-        <item>@string/large_text</item>
-        <item>@string/large_text2</item>
+    <string-array name="exhibit1_info">
+        <item>@string/first_inhabitants_text</item>
+        <item>@string/establishment_text</item>
+        <item>@string/colonial_life_text</item>
+        <item>@string/revolutionary_text</item>
+        <item>@string/craftspeople_text</item>
+    </string-array>
+    <string-array name="exhibit2_info">
+        <item>@string/first_inhabitants_text</item>
+        <item>@string/first_inhabitants_text</item>
+        <item>@string/first_inhabitants_text</item>
+        <item>@string/first_inhabitants_text</item>
+    </string-array>
+    <!-- Level 1 -->
+    <string-array name="titles1">
+        <item>"First Inhabitants"</item>
+        <item>"Establishment"</item>
+        <item>"Colonial Life"</item>
+        <item>"Revolutionary War"</item>
+        <item>"Craftspeople"</item>
+    </string-array>
+    <string-array name="descriptions1">
+        <item>"Pre-Colonial Frederick"</item>
+        <item>"Origins of Frederick-Town"</item>
+        <item>"Life in the New World"</item>
+        <item>"The fight for independence"</item>
+        <item>"Trades and early industry"</item>
+    </string-array>
+    <!-- Level 2 -->
+    <string-array name="titles2">
+        <item>"Exhibit 1"</item>
+        <item>"Exhibit 2"</item>
+        <item>"Exhibit 3"</item>
+        <item>"Exhibit 4"</item>
+    </string-array>
+    <string-array name="descriptions2">
+        <item>"Description 1"</item>
+        <item>"Description 2"</item>
+        <item>"Descriptions 3"</item>
+        <item>"Description 4"</item>
     </string-array>
 </resources>

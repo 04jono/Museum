@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Museum</string>
     <string name="title_home">Home</string>
-    <string name="title_level">Level</string>
-    <string name="title_dashboard">Exhibits</string>
-    <string name="title_notifications">Sitemap</string>
+    <string name="title_level">Exhibits</string>
+    <string name="title_dashboard">Displays</string>
+    <string name="title_notifications">Map</string>
     <string name="exhibit_detail">Exhibit</string>
     <string name="placeholder_text">
         "Placeholder\n\n\n\n\n\n"
@@ -84,5 +84,30 @@
         "hired by the British to suppress the Revolutionary War. He was the father of Jacob Engelbrecht and is buried across "
         "the street from this museum in the Evangelical Lutheran Church graveyard. Jacob Engelbrecht (1797-1882), served Frederick "
         "as a tailor, musician and major. He was also a diarist, whose observations are valuable today for its many perspectives.\n\n"
+    </string>
+
+    <string name="blackfrederick_text">
+        "Black Frederick\n\n"
+
+        "Upon the establishment of Frederick County by European settlers in the 18th century, African descended people were both "
+        "free and enslaved. Many fugitive Blacks formed Maroon communities with local Native Americans before the arrival of the English. "
+        "African Americans labored in agriculture, industry, were skilled artisans, and engaged in business. Blacks advanced Frederick County "
+        "during the colonial era and into the Revolutionary War both on and off the battlefield. \n\n"
+
+        "After the war for independence, the population of free Blacks in the Frederick region grew. This inspired greater abolitionist "
+        "efforts as well as severe laws passed to restrict the freedoms of all African Americans. Despite this, free Blacks established "
+        "crucial organizations for social, cultural, religious educational and economic upliftment including the Underground Railroad "
+        "during the 19th century.\n\n"
+
+        "With the Civil War, the status of African Americans changed drastically as over 3,000 Blacks from Frederick fought for freedom "
+        "in the conflict. The Reconstruction Era in Frederick witnessed an explosion of churches, cemeteries, schools, political associations, "
+        "and the establishment of Black towns throughout the county.\n\n"
+
+        "As Reconstruction ended, the 'Jim Crow' era heralded in segregation and the violent treatment of African Americans in Frederick County. "
+        "This was met by the Frederick Black community with the creation of important institutions to address the needs of African American citizens "
+        "in medicine, education, religion, culture, economics, politics, and social concerns while simultaneously fighting in both World Wars. As the "
+        "Civil Rights Era progressed, Black Frederick residents were exceptionally active in national and local efforts to end segregation and attain "
+        "equal rights for all. The collective struggle Black Fredericktonians to ensure justice and equality in Frederick and beyond has continued to "
+        "the present.\n\n "
     </string>
 </resources>

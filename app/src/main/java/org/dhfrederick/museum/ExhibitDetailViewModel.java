@@ -15,10 +15,10 @@ public class ExhibitDetailViewModel extends ViewModel {
     }
 
     private int exhibitId;
-    private int[] images1 = {R.drawable.firstinhabitants, R.drawable.establishment, R.drawable.coloniallife, R.drawable.revolutionarywar, R.drawable.craftspeople};
+    private int[] images1 = {R.drawable.firstinhabitants, R.drawable.establishment, R.drawable.coloniallife, R.drawable.revolutionarywar, R.drawable.craftspeople, R.drawable.southbentz};
     private int[] images2 = {R.drawable.exhibit4, R.drawable.exhibit3, R.drawable.exhibit2, R.drawable.exhibit1};
     private ArrayList<int[]> imagelist = new ArrayList<int[]>();
-    private int[] audios1 = {R.raw.cubism_sample, R.raw.impressionism_sample, R.raw.cubism_sample, R.raw.impressionism_sample, R.raw.cubism_sample};
+    private int[] audios1 = {R.raw.firstinhabitants, R.raw.establishment, R.raw.coloniallife, R.raw.revolutionarywar, R.raw.craftspeople, R.raw.blackfrederick};
     private int[] audios2 = {R.raw.cubism_sample, R.raw.impressionism_sample, R.raw.cubism_sample, R.raw.impressionism_sample};
     private ArrayList<int[]> audiolist = new ArrayList<int[]>();
     public ExhibitDetailViewModel()

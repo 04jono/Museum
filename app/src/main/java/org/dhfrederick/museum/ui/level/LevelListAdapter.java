@@ -1,4 +1,4 @@
-package org.dhfrederick.museum;
+package org.dhfrederick.museum.ui.level;
 import android.widget.BaseAdapter;
 import android.content.Context;
 import androidx.annotation.NonNull;
@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.dhfrederick.museum.R;
 
 import java.util.ArrayList;
 

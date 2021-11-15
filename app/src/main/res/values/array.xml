@@ -6,6 +6,7 @@
         <item>@string/colonial_life_text</item>
         <item>@string/revolutionary_text</item>
         <item>@string/craftspeople_text</item>
+        <item>@string/blackfrederick_text</item>
     </string-array>
     <string-array name="exhibit2_info">
         <item>@string/first_inhabitants_text</item>
@@ -20,6 +21,7 @@
         <item>"Colonial Life"</item>
         <item>"Revolutionary War"</item>
         <item>"Craftspeople"</item>
+        <item>"Black Frederick"</item>
     </string-array>
     <string-array name="descriptions1">
         <item>"Pre-Colonial Frederick"</item>
@@ -27,6 +29,7 @@
         <item>"Life in the New World"</item>
         <item>"The fight for independence"</item>
         <item>"Trades and early industry"</item>
+        <item>"History of African-Americans in Frederick</item>
     </string-array>
     <!-- Level 2 -->
     <string-array name="titles2">

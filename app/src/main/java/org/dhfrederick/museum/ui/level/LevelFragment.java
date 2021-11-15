@@ -13,12 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
 
-import org.dhfrederick.museum.LevelListAdapter;
 import org.dhfrederick.museum.R;
-import org.dhfrederick.museum.ui.dashboard.DashboardFragmentDirections;
-import org.dhfrederick.museum.ui.dashboard.DashboardViewModel;
-
-import static org.dhfrederick.museum.ui.dashboard.DashboardFragmentDirections.actionNavigationDashboardToExhibitDetailViewFragment;
 
 public class LevelFragment extends Fragment
 {

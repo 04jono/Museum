@@ -20,6 +20,12 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+
 import org.dhfrederick.museum.ExhibitListAdapter;
 import org.dhfrederick.museum.R;
 import org.dhfrederick.museum.ui.dashboard.DashboardFragmentDirections;
@@ -35,67 +41,22 @@ public class NotificationsFragment extends Fragment{
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                ViewModelProviders.of(this).get(NotificationsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_notifications, container, false);
-        return root;
-    }
-    private int getHotspotColor (int x, int y) {
-        bottomimg.setDrawingCacheEnabled(true);
-        Bitmap hotspots = Bitmap.createBitmap(bottomimg.getDrawingCache());
-        bottomimg.setDrawingCacheEnabled(false);
-        return hotspots.getPixel(x, y);
-    }
-    private boolean match(int color1, int color2, int tolerance){
-        if((int)Math.abs(Color.red(color1) - Color.red(color2))>tolerance)
-            return false;
-        if((int)Math.abs(Color.green(color1) - Color.green(color2))>tolerance)
-            return false;
-        if((int)Math.abs(Color.blue(color1) - Color.blue(color2))>tolerance)
-            return false;
-        return true;
-    }
+        //Start map fragment
+        SupportMapFragment supportMapFragment = (SupportMapFragment)getChildFragmentManager().findFragmentById(R.id.google_map);
 
-    @SuppressLint("ClickableViewAccessibility")
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        bottomimg = (ImageView) getView().findViewById(R.id.image_areas);
-        topimg = (ImageView) getView().findViewById(R.id.topimage);
-        topimg.setOnTouchListener(new View.OnTouchListener() {
+        //Async map
+        supportMapFragment.getMapAsync(new OnMapReadyCallback() {
             @Override
-            public boolean onTouch(View v, MotionEvent ev) {
-
-                final int action = ev.getAction();
-
-                ImageView imageView = (ImageView) v.findViewById(R.id.topimage);
-                if (imageView == null) return false;
-
-                if (action == MotionEvent.ACTION_DOWN) {
-                    final int evX = (int) ev.getX();
-                    final int evY = (int) ev.getY();
-                    int touchColor = getHotspotColor(evX, evY);
-                    int tolerance = 30;
-                    if (match(Color.RED, touchColor, tolerance)) {
-                        int num = 1;
-                        navigateToExhibitDetail(num);
-                        return true;
-                    } else if (match(Color.GREEN, touchColor, tolerance)) {
-                        int num = 2;
-                        navigateToExhibitDetail(num);
-                        return true;
-                    } else if (match(Color.BLUE, touchColor, tolerance)) {
-                        int num = 3;
-                        navigateToExhibitDetail(num);
-                        return true;
-                    } else if (match(Color.YELLOW, touchColor, tolerance)) {
-                        int num = 4;
-                        navigateToExhibitDetail(num);
-                        return true;
-                    }
-                }
-                return false;
+            public void onMapReady(@NonNull GoogleMap googleMap) {
+                googleMap.moveCamera( CameraUpdateFactory.newLatLngZoom(new LatLng(39.41517934714381, -77.40910019387118) , 18.0f) );
             }
         });
+        return root;
+    }
+
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+
     }
     private void navigateToExhibitDetail(int num)
     {

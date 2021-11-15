@@ -15,7 +15,7 @@ public class DashboardViewModel extends ViewModel {
     // private MutableLiveData<String> mText;
     private int dashboardId;
 
-    private int[] images1 = {R.drawable.firstinhabitants, R.drawable.establishment, R.drawable.coloniallife, R.drawable.revolutionarywar, R.drawable.craftspeople};
+    private int[] images1 = {R.drawable.firstinhabitants, R.drawable.establishment, R.drawable.coloniallife, R.drawable.revolutionarywar, R.drawable.craftspeople, R.drawable.southbentz};
     private int[] images2 = {R.drawable.exhibit4, R.drawable.exhibit3, R.drawable.exhibit2, R.drawable.exhibit1};
     private ArrayList<int[]> imagelist = new ArrayList<int[]>();
 
